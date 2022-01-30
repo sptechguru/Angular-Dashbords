@@ -1,0 +1,97 @@
+
+
+
+<section class="container-fluid">
+
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <h3 class="navbar-brand text-primary font-weight-bold">Users Dash bords..!</h3>
+      <form class="d-flex">
+          <input type="text" class="form-control" placeholder="search user data.." name="searchTerm"
+          [(ngModel)]="searchTerm" />
+     <!-- <a class="btn btn-danger btn-md mx-5" (click)="logoutMethod()" role="button">Logout</a> -->
+      </form>
+    </div>
+  </nav>
+  <br/>
+
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">UserName</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Created</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of profile.body | paginate: { itemsPerPage: 10, currentPage: p } | filter:searchTerm let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{item.username}}</td>
+      <td>{{item.first_name}}</td>
+      <td>{{item.last_name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.created_at |date}}</td>
+      <td>
+         <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+         data-bs-target="#editModalForm"(click)="editModal(item)">
+         Edit
+       </button>
+      </td>
+      <td>
+        <button type="button" (click)="deleteUser(item.id)" class="btn btn-danger btn-sm">Delete</button>
+      </td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+<div class="modal fade" id="editModalForm" *ngIf="modelHide" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" *ngIf="editPostModal">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form [formGroup]="editform" (ngSubmit)="updateMethod()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">User Name </label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="username" [(ngModel)]="editPostModal.username">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email </label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="email" [(ngModel)]="editPostModal.email">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">First name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="first_name" [(ngModel)]="editPostModal.first_name">
+        </div>
+
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Last Name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            formControlName="last_name" [(ngModel)]="editPostModal.last_name">
+        </div>
+        <button type="submit"  class="btn btn-primary">update</button>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+

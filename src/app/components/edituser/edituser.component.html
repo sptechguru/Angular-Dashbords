@@ -1,0 +1,31 @@
+<section class="container card py-5">
+  <h1 class="text-center text-primary">Edit User Details</h1>
+  <form [formGroup]="editform" (ngSubmit)="updateMethod()">
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">User Name </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="username">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="email">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">First name</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="first_name">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="last_name">
+    </div>
+
+
+    <button type="submit"  class="btn btn-primary">update</button>
+  </form>
+</section>

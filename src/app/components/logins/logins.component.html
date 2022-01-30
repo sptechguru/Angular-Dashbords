@@ -1,0 +1,38 @@
+
+<section class="container-fluid py-5">
+<div class="container card">
+  <h1 class="text-center text-primary">Login page</h1>
+
+      <form  [formGroup]="loginform" (ngSubmit)="loginMethod()">
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="email" placeholder="Enter your Email & Mobile Number"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">email is required</div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="password" placeholder="Enter your Password"
+        [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">password is required</div>
+        </div>
+      </div>
+
+      <!-- <button type="submit"  [disabled]="!forgetform.valid" class="btn btn-primary">Login</button> -->
+      <button type="submit" class="btn btn-primary">Login</button>
+
+<br/>
+<br/>
+
+      <button routerLink="/signup" type="submit" class="btn btn-link mx-3">Create Account.. ??</button>
+
+      <button routerLink="/forget" type="submit" class="btn btn-link mx-3">Forget Password ??</button>
+
+    </form>
+</div>
+  </section>

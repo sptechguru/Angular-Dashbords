@@ -1,0 +1,61 @@
+<section class="container-fluid py-5">
+  <div class="container card">
+  <h1 class="text-center text-primary">Signup </h1>
+
+  <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label class="form-label">User Name</label>
+      <input type="text" class="form-control"
+      [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+      formControlName="username" placeholder="Enter your name">
+      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+        <div *ngIf="f.username.errors.required">username is required</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">First Name</label>
+      <input type="text" class="form-control" formControlName="first_name"  placeholder="Enter your First name"
+      [ngClass]="{ 'is-invalid': submitted && f.first_name.errors }">
+      <div *ngIf="submitted && f.first_name.errors" class="invalid-feedback">
+        <div *ngIf="f.first_name.errors.required">First Name is required</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Last Name</label>
+      <input type="text" class="form-control" formControlName="last_name"  placeholder="Enter your Last name"
+      [ngClass]="{ 'is-invalid': submitted && f.last_name.errors }">
+      <div *ngIf="submitted && f.last_name.errors" class="invalid-feedback">
+        <div *ngIf="f.last_name.errors.required">Last name is required</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email address</label>
+      <input type="email" class="form-control" formControlName="email"  placeholder="Enter your Email"
+      [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">email is required</div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password"  placeholder="Enter your password"
+      [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">password is required</div>
+      </div>
+    </div>
+
+<!-- ssssssssssssss@    -->
+ <button type="submit"  class="btn btn-success">signup</button>
+
+<!--
+    <button type="submit" [disabled]="!myform.valid" class="btn btn-success">signup</button> -->
+    <button routerLink="/login" type="button" class="btn btn-link">Already have account ?</button>
+
+  </form>
+  </div>
+</section>

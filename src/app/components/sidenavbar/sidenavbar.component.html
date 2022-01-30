@@ -1,0 +1,37 @@
+<p>sidenavbar works!</p>
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav mode="side" #sidenav closed position="start">
+    <ul>
+      <li><a class="button" routerLink="/posts/post-content" routerLinkActive="activebutton"> Post</a> </li>
+      <li><a class="button" routerLink="/albums/album-content" routerLinkActive="activebutton">Albums</a> </li>
+      <li><a class="button" routerLink="/posts/dashbords" routerLinkActive="activebutton">User Dashbords</a> </li>
+      <li><a class="button" (click)="logOut()" routerLinkActive="activebutton">Logout</a> </li>
+
+
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <mat-toolbar class="ngb bgimg">
+      <button class="ml-2" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    <!-- <b class="text-white font-weight-bold mx-5"> Angular Pro</b> -->
+      <span class="toolbar-spacer"></span>
+      <img class="img-fluid img-responsive" src="https://www.kindpng.com/picc/m/495-4952535_create-digital-profile-icon-blue-user-profile-icon.png"/>
+     <!-- Example single danger button -->
+<!-- Example single danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-primary btn-sm dropdown-toggle mx-3" data-bs-toggle="dropdown" aria-expanded="false">
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" >{{email}}</a></li>
+
+  </ul>
+</div>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

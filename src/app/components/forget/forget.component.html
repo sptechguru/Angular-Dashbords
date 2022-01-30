@@ -1,0 +1,18 @@
+<section class="container-fluid py-5">
+  <div class="container card">
+  <h1 class="text-center text-primary">forget password</h1>
+  <form [formGroup]="forgetform" (ngSubmit)="forgetMethod()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Forget password</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">email is required</div>
+        </div>
+    </div>
+
+    <button type="submit"  class="btn btn-primary">forget Password</button>
+  </form>
+  </div>
+</section>

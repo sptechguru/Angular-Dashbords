@@ -1,0 +1,27 @@
+
+<section class="container-fluid p-5">
+
+<h2 class="text-primary font-weight-bold text-center py-2">Photo Albums Details..</h2>
+
+<div class="col-md-8">
+  <form class="d-flex">
+    <input type="text" class="form-control ms-auto" placeholder="search data" name="searchTerm"
+    [(ngModel)]="searchTerm" (keyup)="search($any($event.target).value)" />
+  </form>
+</div>
+
+  <div class="row py-3" >
+    <div class="col-md-4 col-lg-4 col-12" *ngFor="let item of lists | searchFilter: searchTerm; index as i">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{item.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h3 class="card-title">Album id :- {{item.albumId}}</h3>
+          <p class="card-text">  Card title: - {{item.title}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br/>
+  <br/>
+
+</section>

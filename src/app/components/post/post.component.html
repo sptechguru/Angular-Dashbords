@@ -1,0 +1,25 @@
+
+<section class="container-fluid">
+  <h2 class="text-primary font-weight-bold text-center py-2">All Posts  Tittle Here..</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Title</th>
+        <th>action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of lists; let i = index">
+        <td>{{i+1}}</td>
+       <h1> <td>{{post?.title}}</td></h1>
+       <td> <a type="button" [routerLink]="['/posts/post_details',post?.id]" class="btn btn-primary btn-sm"> View Detials</a>
+        </td>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+</section>
