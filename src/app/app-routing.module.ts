@@ -26,8 +26,9 @@ const routes: Routes = [
 
   {path: 'signup', component:SignupComponent},
   {path: 'forget', component:ForgetComponent},
-  {path: 'update/:id', component:EdituserComponent},
-  {path: 'list', component:UserlistComponent},
+
+  // {path: 'update/:id', component:EdituserComponent},
+  // {path: 'list', component:UserlistComponent},
   // {path: '**',  component: PagenotfoundComponent}
 
 ];
