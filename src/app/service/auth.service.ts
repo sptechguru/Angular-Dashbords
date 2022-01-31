@@ -1,37 +1,27 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { userprofile } from '../interface/userprofie';
 
-  interface userprofile {
-  active: 1
-  country_name: string
-  created_at: string
-  email: string
-  first_name: string
-  id: number
-  isAdmin: string
-  is_deleted: string
-  last_login: null
-  last_name:string
-  phone: null
-  profile_picture:string
-  username: string
-  }
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiService {
+export class AuthService {
+
  constructor(private http:HttpClient) { }
 
-  public baseurl = "http://18.170.237.209:3025/";
-
-  public geturl = 'http://18.170.237.209:3025/getUserById';
-
+  readonly baseurl = environment.WEBURL;
 
   getMethod(url:any):Observable<userprofile[]>{
     return this.http.get<userprofile[]>(this.baseurl+url);
   }
+
+
+  getcurententId(id:any){
+    return this.http.post(this.baseurl +'getUserById',id)
+   }
 
 
   postMethod(url:any,body:any):Observable<any>{
@@ -51,10 +41,10 @@ export class ApiService {
     return this.http.post(this.baseurl + '/token',data,{headers:reqheader});
   }
 
+  isLoggedIn(){
+    return localStorage.getItem('userToken');
+  }
 
-  getcurententId(id:any){
-    return this.http.post(this.geturl,id)
-   }
 
   patchMethod(body:any){
     const  customheders =  new HttpHeaders({
@@ -75,9 +65,9 @@ export class ApiService {
     return this.http.patch(this.baseurl, {headers:customheders ,params:putparams,body:putBody});
   }
 
-  isLoggedIn(){
-    return localStorage.getItem('userToken');
-  }
+  deleteById(id:any){
+    return this.http.delete(this.baseurl,id)
+   }
 
 
 }

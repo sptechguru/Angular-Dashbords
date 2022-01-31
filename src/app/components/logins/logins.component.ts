@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/api.service';
+import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +13,7 @@ export class LoginsComponent implements OnInit {
 
   loginform!: FormGroup;
   submitted: boolean =false;
-  constructor( private api: ApiService ,public route:Router){
+  constructor( private api: AuthService ,public route:Router){
     this.loginform = new FormGroup({
       email: new FormControl(  '',  [Validators.required, Validators.pattern('^.+@.+\..+$')]),
       password: new FormControl(  '',  [Validators.required]),
@@ -34,7 +34,6 @@ export class LoginsComponent implements OnInit {
        localStorage.setItem('Email',res.body.email);
         if(res.msg =='Success'){
           Swal.fire('Oops...', 'login successfully', 'success')
-          // alert('login successfully');
           setTimeout(() =>{
             this.route.navigate(['posts/post-content']);
           },3000)
@@ -43,7 +42,8 @@ export class LoginsComponent implements OnInit {
           Swal.fire('Oops...', 'invalid user name & password!', 'error')
           this.loginform.reset();
         }
-
+      },error =>{
+        console.log("server error ",error);
       })
     }
 

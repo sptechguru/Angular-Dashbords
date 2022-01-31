@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, ActivatedRouteSnapshot, Router } from '@angular/router';
-import { ApiService } from 'src/app/service/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-edituser',
   templateUrl: './edituser.component.html',
@@ -12,7 +12,7 @@ export class EdituserComponent implements OnInit {
   id: any;
   editform!: FormGroup;
   submitted: boolean = false;
-  constructor(private api: ApiService, private active: ActivatedRoute,public route: Router) {
+  constructor(private api: AuthService, private active: ActivatedRoute,public route: Router) {
     this.editform = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.pattern('^.+@.+\..+$')]),
       username: new FormControl(''),

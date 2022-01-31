@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/api.service';
+import { AuthService } from 'src/app/service/auth.service';
 import Swal from 'sweetalert2';
 
 
@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   myform!: FormGroup;
   submitted: boolean = false;
 
-    constructor( private api: ApiService , public route:Router) {
+    constructor( private api: AuthService , public route:Router) {
     	this.myform = new FormGroup({
         first_name: new FormControl(	'',	[Validators.required]),
         last_name: new FormControl(  '',  [Validators.required]),

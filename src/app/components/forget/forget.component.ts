@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/api.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-forget',
@@ -12,7 +12,7 @@ import { ApiService } from 'src/app/service/api.service';
 export class ForgetComponent implements OnInit {
   forgetform!: FormGroup;
   submitted: boolean = false;
-  constructor( private http: HttpClient, private api:ApiService
+  constructor( private http: HttpClient, private api:AuthService
   ,public route:Router){
     this.forgetform = new FormGroup({
       email: new FormControl(  '',  [Validators.required, Validators.pattern('^.+@.+\..+$')]),

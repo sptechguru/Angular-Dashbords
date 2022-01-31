@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginsComponent } from './components/logins/logins.component';
 import { AuthGuard } from './auth/auth.guard';
-import { ApiService } from './service/api.service';
 import { EdituserComponent } from './components/edituser/edituser.component';
 import { UserlistComponent } from './components/userlist/userlist.component';
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
@@ -26,6 +25,8 @@ import { PhotoAlbumsComponent } from './components/photo-albums/photo-albums.com
 import { PostsModule } from './posts/posts.module';
 import { AlbumsModule } from './albums/albums.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { AuthService } from './service/auth.service';
+import { CrudService } from './service/crud.sevice';
 
 
 @NgModule({
@@ -60,7 +61,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     AlbumsModule
 
   ],
-  providers: [AuthGuard,ApiService],
+  providers: [AuthGuard,AuthService,CrudService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

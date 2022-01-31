@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ApiService } from 'src/app/service/api.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ThrowStmt } from '@angular/compiler';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-dashbord',
@@ -11,7 +11,7 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class DashbordComponent implements OnInit {
 
-  constructor(public route: Router, public api: ApiService) { }
+  constructor(public route: Router, public api: AuthService) { }
 
   profile: any = [];
   p: number = 1;
