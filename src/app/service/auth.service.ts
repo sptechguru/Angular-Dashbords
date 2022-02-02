@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { userprofile } from '../interface/userprofie';
 
-
 @Injectable({
   providedIn: 'root'
 })

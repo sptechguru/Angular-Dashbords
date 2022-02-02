@@ -1,0 +1,9 @@
+<h1>searchbox child  works! {{herop.name}}</h1>
+
+<form class="d-flex">
+  <input type="text"
+  class="form-control ms-auto"
+  placeholder="{{herop.name}}" name="{{searhitem}}"
+  [(ngModel)]="searchTerm"
+  (keyup)="search($any($event.target).value)" />
+</form>

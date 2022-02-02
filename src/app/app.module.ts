@@ -27,6 +27,7 @@ import { AlbumsModule } from './albums/albums.module';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AuthService } from './service/auth.service';
 import { CrudService } from './service/crud.sevice';
+import { SearchboxComponent } from './components/searchbox/searchbox.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { CrudService } from './service/crud.sevice';
     PostComponent,
     PostDetailsComponent,
     PhotoAlbumsComponent,
+    SearchboxComponent,
   ],
   imports: [
     BrowserModule,
