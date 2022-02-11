@@ -9,6 +9,20 @@
   [herop] ="inputval"
   [searhitem] = "searchTerm"></app-searchbox> -->
 
+  <app-search-box
+  [value]="queryObject?.search_text"
+ (onQuerys)="searchUserByQuery()"
+   [placeholderText]="'Search by order No.'"
+>
+</app-search-box>
+
+<app-search-box
+[value]="queryObject?.search_text"
+(onQuerys)="searchUserByQuery()"
+ [placeholderText]="'Search by order No.'"
+>
+</app-search-box>
+
 <br/>
 
  <form class="d-flex">

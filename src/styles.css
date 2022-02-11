@@ -14,6 +14,13 @@ body{
   box-sizing: border-box;
 }
 
+.bgimgs{
+  background-image: url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YWRtaW58ZW58MHx8MHx8&w=1000&q=80');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
 .container{
   width: 50%;
   background-color: whitesmoke;

@@ -1,0 +1,50 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "email": "santoshpal@gmail.com",
+      "password": "123@#45"
+    },
+    {
+      "id": 2,
+      "email": "sani@gmail.com",
+      "password": "123@#45"
+    },
+    {
+      "uname": "jitu123",
+      "fname": "jitu",
+      "lname": "pal",
+      "email": "jitupal@gmail.com",
+      "password": "123@#45",
+      "id": 3
+    }
+  ],
+  "sigin": [
+    {
+      "uname": "manish456",
+      "fname": "manish",
+      "lname": "yadav",
+      "email": "manishl@gmail.com",
+      "password": "123@#45",
+      "id": 201
+    },
+    {
+      "uname": "sandeep123",
+      "fname": "sandeep",
+      "lname": "yadav",
+      "email": "sandepp@gmail.com",
+      "password": "123@#45",
+      "id": 202
+    },
+    {
+      "id": 203
+    }
+  ]
+}

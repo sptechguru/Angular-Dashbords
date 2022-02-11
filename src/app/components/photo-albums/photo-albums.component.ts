@@ -15,6 +15,8 @@ export class PhotoAlbumsComponent implements OnInit {
   lists :any = [];
   searchTerm!: string;
   hidebox:boolean =false;
+  isSearchAsTypeOn:boolean = false;
+  queryObject:any;
 
   inputval :any =  {
     name:"santosh",
@@ -32,6 +34,9 @@ export class PhotoAlbumsComponent implements OnInit {
     })
   }
 
+  searchUserByQuery(){
+ this.search('data:any');
+  }
 
   search(post: string): void {
     this.hidebox = true;

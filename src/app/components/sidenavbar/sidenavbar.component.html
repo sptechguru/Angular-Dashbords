@@ -1,11 +1,33 @@
+<ngx-loading-bar [includeSpinner] ="false"
+[color]="'red'" [diameter]="'14px'"
+[height]="'5px'"
+[fixed]="true"
+>
+</ngx-loading-bar>
 <mat-sidenav-container fullscreen>
-
   <mat-sidenav mode="side" #sidenav closed position="start">
     <ul>
       <li><a class="button" routerLink="/posts/post-content" routerLinkActive="activebutton"> Post</a> </li>
+      <li>
+        <!-- Example single danger button -->
+          <div class="btn-group">
+            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Basic ALL Modules ...
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="/basic/reactive" >Reactive Form</a></li>
+              <li><a class="dropdown-item" routerLink="/basic/news" >Indian News</a></li>
+              <li><a class="dropdown-item" routerLink="/basic/tech" >Tech News</a></li>
+              <li><a class="dropdown-item" routerLink="/basic/busin" >Buisnes News</a></li>
+              <li><a class="dropdown-item" routerLink="/basic/reactive" >Separated link</a></li>
+            </ul>
+          </div>
+        <a class="button" routerLink="/basic/reactive" routerLinkActive="activebutton"> Reactice form</a>
+       </li>
+
       <li><a class="button" routerLink="/albums/album-content" routerLinkActive="activebutton">Albums</a> </li>
       <li><a class="button" routerLink="/posts/dashbords" routerLinkActive="activebutton">User Dashbords</a> </li>
-      <li><a class="button" (click)="logOut()" routerLinkActive="activebutton">Logout</a> </li>
+      <!-- <li><a class="button" (click)="logOut()" routerLinkActive="activebutton">Logout</a> </li> -->
 
 
     </ul>
@@ -25,6 +47,7 @@
   </button>
   <ul class="dropdown-menu">
     <li><a class="dropdown-item" >{{email}}</a></li>
+    <li><a class="button" (click)="logOut()" routerLinkActive="activebutton">Logout</a> </li>
 
   </ul>
 </div>

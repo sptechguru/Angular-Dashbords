@@ -1,3 +1,4 @@
+import { BasicModule } from './basic/basic.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -28,7 +29,14 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { AuthService } from './service/auth.service';
 import { CrudService } from './service/crud.sevice';
 import { SearchboxComponent } from './components/searchbox/searchbox.component';
-
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { NewsitemComponent } from './components/newsitem/newsitem.component';
+import { TechNewsComponent } from './components/tech-news/tech-news.component';
+import { BusinessComponent } from './components/business/business.component';
+import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/communication/child/child.component';
+import { SearchBoxComponent } from './Customcomponets/search-box/search-box.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +53,13 @@ import { SearchboxComponent } from './components/searchbox/searchbox.component';
     PostDetailsComponent,
     PhotoAlbumsComponent,
     SearchboxComponent,
+    ReactiveFormComponent,
+    NewsitemComponent,
+    TechNewsComponent,
+    BusinessComponent,
+    ParentComponent,
+    ChildComponent,
+    SearchBoxComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +75,9 @@ import { SearchboxComponent } from './components/searchbox/searchbox.component';
     MatIconModule,
     MatToolbarModule,
     PostsModule,
-    AlbumsModule
+    AlbumsModule,
+    BasicModule,
+    LoadingBarHttpClientModule
 
   ],
   providers: [AuthGuard,AuthService,CrudService],
